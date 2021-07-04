@@ -2,7 +2,6 @@
 > OK, aqui vai ser meu novo blogo.
 
 ## History
-- Adicionar tailwind (deus nos proteja)
 - Adicionar RSS
 - Adicionar PWA
 - Adicionar Helmet pra páginas (SEO)

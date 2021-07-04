@@ -1,8 +1,4 @@
-export const decorators = [
-  Story => (
-    <Story />
-  ),
-]
+import '../src/styles.css'
 
 export const parameters = {
   actions: { argTypesRegex: '^on[A-Z].*' },
