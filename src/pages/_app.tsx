@@ -6,7 +6,7 @@ function App({ Component, pageProps }: AppProps) {
   return (
     <>
       <Head>
-        <title>Next + ChakraUI - Boilerplate</title>
+        <title>Hello, I&apos;m Wallace</title>
         <link rel="shortcut icon" href="/images/icon-512.png" />
         <link rel="apple-touch-icon" href="/images/icon-512.png" />
         <link rel="manifest" href="/manifest.json" />
