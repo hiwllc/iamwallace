@@ -1,5 +1,5 @@
 backend:
-  name: github
+  name: git-gateway
   branch: main
   repo: uselessdev/iamwallace
   site_domain: https://iamwallace.netlify.app/
