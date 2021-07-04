@@ -1,11 +1,12 @@
 import { AppProps } from 'next/app'
 import Head from 'next/head'
+import '../styles.css'
 
 function App({ Component, pageProps }: AppProps) {
   return (
     <>
       <Head>
-        <title>Hello, I&apos;m Wallace</title>
+        <title>Oi, Eu sou o Wallace</title>
         <link rel="shortcut icon" href="/images/icon-512.png" />
         <link rel="apple-touch-icon" href="/images/icon-512.png" />
         <link rel="manifest" href="/manifest.json" />
