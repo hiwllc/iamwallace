@@ -15,11 +15,11 @@ collections:
     slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
     fields:
       - { label: 'Titulo', name: 'title', widget: 'string' }
-      - { label: 'Data', name: 'published_at', widget: 'datetime' }
-      - { label: 'Descrição', name: 'excerpt', widget: 'string' }
-      - { label: 'Capa', name: 'thumbnail', widget: 'image' }
+      - { label: 'Data', name: 'date', widget: 'datetime' }
+      - { label: 'Descrição', name: 'description', widget: 'string' }
+      - { label: 'Capa', name: 'cover', widget: 'image' }
       - label: 'Categoria'
         name: 'category'
         widget: 'select'
         options: ['React', 'GraphQL']
-      - { label: 'Artigo', name: 'content', widget: 'markdown' }
+      - { label: 'Artigo', name: 'body', widget: 'markdown' }
