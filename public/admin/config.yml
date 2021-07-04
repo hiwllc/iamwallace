@@ -1,5 +1,5 @@
 backend:
-  name: git-gateway
+  name: github
   branch: main
   repo: uselessdev/iamwallace
   site_domain: https://iamwallace.dev
