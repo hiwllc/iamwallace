@@ -1,8 +1,7 @@
 backend:
-  name: git-gateway
-  branch: main
+  name: github
   repo: uselessdev/iamwallace
-  site_domain: https://iamwallace.netlify.app/
+  branch: main
 
 publish_mode: editorial_workflow
 media_folder: public/images
