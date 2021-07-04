@@ -2,7 +2,6 @@
 > OK, aqui vai ser meu novo blogo.
 
 ## History
-- Remover Apollo-Client
 - Remover Chakra-ui
 - Adicionar tailwind (deus nos proteja)
 - Adicionar RSS
