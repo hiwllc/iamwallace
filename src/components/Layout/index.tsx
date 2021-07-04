@@ -1,15 +1,9 @@
-import { Grid, GridProps } from '@chakra-ui/react'
+import { ReactNode } from 'react'
 
-export function Layout({ children, ...props }: GridProps) {
-  return (
-    <Grid
-      w="100%"
-      h="100vh"
-      placeItems="center"
-      backgroundColor="gray.100"
-      {...props}
-    >
-      {children}
-    </Grid>
-  )
+export type Props = {
+  children: ReactNode
+}
+
+export function Layout({ children }: Props) {
+  return <div>{children}</div>
 }
