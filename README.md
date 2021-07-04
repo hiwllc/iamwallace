@@ -1,15 +1,15 @@
-# Nextjs Starter
-> A simple starter with chakra-ui.
+# Blog
+> OK, aqui vai ser meu novo blogo.
 
-This is a simple and opinated nextjs starter that includes, [chakra-ui](https://chakra-ui.com) as ui kit and [@apollo/client](https://www.apollographql.com/) for state management assuming you're using GraphQL as api in backend.
-
-## How to get started
-
-TO start with this template you can follow the steps below:
-
-```bash
-yarn create next-app my-app -e https://github.com/uselessdev/next-starter
-cd my-app
-yarn
-yarn dev # you can now access http://localhost:3000
-```
+## History
+- Remover Apollo-Client
+- Remover Chakra-ui
+- Adicionar tailwind (deus nos proteja)
+- Adicionar RSS
+- Adicionar PWA
+- Adicionar Helmet pra páginas (SEO)
+- Suporte para MDX (ou usar um CMS as wordpress)
+- Adicionar header para headers nos posts
+- Adicionar code highlight para trechos de códigos
+- Adicionar goatcounter ou criar um analitycs
+- Adicionar um gerador de sitemap.
