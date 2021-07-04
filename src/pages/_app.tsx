@@ -12,7 +12,7 @@ function App({ Component, pageProps }: AppProps) {
         <meta name="theme-color" content="#BE9EDF" />
         <meta
           name="description"
-          content="Starter with Next and Typescript with ChakraUI"
+          content="Algumas vezes faço uns desenhos e outras vezes escrevo umas coisas aqui, não apenas sobre tecnologia."
         />
       </Head>
 
