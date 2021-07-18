@@ -39,7 +39,7 @@ export function transformPostData({
     content,
     excerpt,
     frontmatter,
-    slug: `/${slug.slice(11)}`,
+    slug: slug.slice(11),
   }
 
   if (fields.length <= 0) {
@@ -70,4 +70,17 @@ export async function allPosts(fields: Fields = ['frontmatter', 'slug']) {
     .map(getPostByFilename({ fields, dateStyle: 'long' }))
 
   return posts as Post[]
+}
+
+export async function getPostBySlug(slug: string) {
+  const paths = getAllFilesName()
+  const filename = paths.find(path => path.includes(slug))
+
+  if (!filename) {
+    return null
+  }
+
+  const post = transformPostData({ filename, dateStyle: 'long' })
+
+  return post as Post
 }
