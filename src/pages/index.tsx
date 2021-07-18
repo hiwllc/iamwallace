@@ -1,38 +1,32 @@
-import Image from 'next/image'
-import me from '../../public/images/me.jpg'
+import type { Post } from 'api'
+import { allPosts } from 'api'
+import { Posts } from 'components/posts'
+import { Header } from 'components/header'
 
 const AVATAR_SIZE = 48
 
-const IndexPage = () => {
+type Props = {
+  posts: Post[]
+}
+
+const IndexPage = ({ posts }: Props) => {
   return (
     <>
-      <header className="px-2 py-6 w-full">
-        <div className="flex h-full items-center w-full max-w-4xl m-auto">
-          <Image
-            width={AVATAR_SIZE}
-            height={AVATAR_SIZE}
-            placeholder="blur"
-            src={me}
-            className="rounded-full"
-            alt="Esse na foto sou eu, Wallace."
-          />
+      <Header size={AVATAR_SIZE} />
 
-          <div className="px-4">
-            <h2 className="text-gray-600 font-black text-xl">
-              Wallace Oliveira
-            </h2>
-            <p className="text-gray-600">
-              Olá, atualmente trabalho como desenvolvedor frontend
-            </p>
-          </div>
-        </div>
-      </header>
-
-      {/* @TODO featured post */}
-      {/* @TODO last five posts */}
-      {/* @TODO list all posts */}
+      <main className="w-full px-4 py-8">
+        <Posts posts={posts} />
+      </main>
     </>
   )
+}
+
+export const getStaticProps = async () => {
+  const posts = await allPosts()
+
+  return {
+    props: { posts },
+  }
 }
 
 export default IndexPage
