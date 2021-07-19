@@ -3,6 +3,7 @@ title: Vamos Falar Sobre Datasources
 date: 2021-01-21
 description: Vamos refatorar nossa aplicação e falar um pouco sobre Datasources.
 cover: images/apollo-server.png
+category: GraphQL
 ---
 
 No artigo anterior, nós fizemos toda a parte pra criar, editar, ler e excluir nossos dados de autores,
