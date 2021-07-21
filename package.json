@@ -59,7 +59,7 @@
     "raw-loader": "^4.0.2",
     "react-is": "^17.0.2",
     "react-markdown": "^6.0.2",
-    "tailwindcss": "^2.2.4",
+    "tailwindcss": "^2.2.5",
     "typescript": "^4.3.5"
   },
   "license": "MIT"
