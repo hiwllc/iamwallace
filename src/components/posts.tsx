@@ -10,7 +10,7 @@ export function Posts({ posts }: Props) {
     <section className="w-full space-y-12 max-w-2xl m-auto">
       {posts.map(post => (
         <article className="group" key={post.slug}>
-          <h3 className="text-gray-600 text-2xl font-black group-hover:text-pink-400">
+          <h3 className="text-gray-600 text-2xl font-black group-hover:text-pink-400 transition-colors">
             <Link href={post.slug}>
               <a>{post.frontmatter.title}</a>
             </Link>
