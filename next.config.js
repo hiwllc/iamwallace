@@ -8,6 +8,10 @@ module.exports = withPWA({
     disable: !isProduction,
   },
 
+  images: {
+    domains: ['localhost'],
+  },
+
   webpack: config => {
     config.module.rules.push({
       test: /\.md$/,
