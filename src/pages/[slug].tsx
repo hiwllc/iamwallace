@@ -13,6 +13,7 @@ import {
   List,
   Li,
 } from 'components/post'
+import { Footer } from 'components/footer'
 
 const AVATAR_SIZE = 48
 
@@ -63,6 +64,8 @@ const PostPage = (props: Props) => {
           </Markdown>
         </article>
       </section>
+
+      <Footer />
     </>
   )
 }

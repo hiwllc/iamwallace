@@ -2,6 +2,7 @@ import type { Post } from 'api'
 import { allPosts } from 'api'
 import { Posts } from 'components/posts'
 import { Header } from 'components/header'
+import { Footer } from 'components/footer'
 
 const AVATAR_SIZE = 48
 
@@ -17,6 +18,8 @@ const IndexPage = ({ posts }: Props) => {
       <main className="w-full px-4 py-8">
         <Posts posts={posts} />
       </main>
+
+      <Footer />
     </>
   )
 }
