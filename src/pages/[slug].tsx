@@ -14,6 +14,7 @@ import {
   Li,
 } from 'components/post'
 import { Footer } from 'components/footer'
+import { SEO } from 'components/seo'
 
 const AVATAR_SIZE = 48
 
@@ -24,18 +25,26 @@ type Props = {
 const PostPage = (props: Props) => {
   return (
     <>
+      <SEO
+        title={props.post.frontmatter.title}
+        description={props.post.frontmatter.description}
+        image={props.post.frontmatter.cover}
+      />
+
       <Header size={AVATAR_SIZE} />
 
       <section className="w-full max-w-2xl m-auto">
-        <header className="w-full py-60 text-center">
-          <h2 className="text-6xl text-gray-600 font-black">
+        <header className="w-full px-6 py-24 text-center space-y-2">
+          <h2 className="text-4xl text-gray-600 font-black">
             {props.post.frontmatter.title}
           </h2>
-          <small className="text-lg mt-6 block text-gray-500">
+
+          <small className="text-lg block text-gray-500">
             {props.post.frontmatter.date}
           </small>
+
           {props.post.frontmatter.category ? (
-            <div className="mt-4">
+            <div>
               <a
                 href="categoria/graphql"
                 className="bg-pink-400 font-semibold p-2 rounded-md text-xs"
@@ -46,18 +55,18 @@ const PostPage = (props: Props) => {
           ) : null}
         </header>
 
-        <article className="max-w-prose pb-24">
+        <article className="max-w-prose pb-24 px-6">
           <Markdown
             components={{
+              a: A,
+              blockquote: Blockquote,
+              code: Code,
               h2: H2,
               h3: H3,
-              p: Paragraph,
-              code: Code,
-              a: A,
               img: Image,
-              blockquote: Blockquote,
-              ul: List,
               li: Li,
+              p: Paragraph,
+              ul: List,
             }}
           >
             {props.post.content}

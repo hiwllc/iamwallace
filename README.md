@@ -5,8 +5,7 @@
 
 ## History
 - Adicionar RSS.
-- Adicionar Helmet pra páginas (SEO).
 - Adicionar goatcounter ou criar um analitycs.
 - Adicionar um gerador de sitemap.
-- Adicionar meu 3D como favicon e logo.
+- Adicionar meu 3D como favicon e logo (vai ficar pra próxima versão do site).
 - Functions para gerar imagem do post para compartilhar.
