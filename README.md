@@ -6,6 +6,5 @@
 ## History
 - Adicionar RSS.
 - Adicionar goatcounter ou criar um analitycs.
-- Adicionar um gerador de sitemap.
 - Adicionar meu 3D como favicon e logo (vai ficar pra próxima versão do site).
 - Functions para gerar imagem do post para compartilhar.
