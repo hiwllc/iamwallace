@@ -33,9 +33,9 @@ const PostPage = (props: Props) => {
 
       <Header size={AVATAR_SIZE} />
 
-      <section className="w-full max-w-2xl m-auto">
-        <header className="w-full px-6 py-24 text-center space-y-2">
-          <h2 className="text-4xl text-gray-600 font-black">
+      <section className="w-full max-w-2xl px-4 m-auto">
+        <header className="w-full py-24 text-center space-y-2 lg:py-60 lg:space-y-4">
+          <h2 className="text-4xl text-gray-600 font-black lg:text-6xl">
             {props.post.frontmatter.title}
           </h2>
 
@@ -43,7 +43,7 @@ const PostPage = (props: Props) => {
             {props.post.frontmatter.date}
           </small>
 
-          {props.post.frontmatter.category ? (
+          {/* {props.post.frontmatter.category ? (
             <div>
               <a
                 href="categoria/graphql"
@@ -52,10 +52,10 @@ const PostPage = (props: Props) => {
                 {props.post.frontmatter.category}
               </a>
             </div>
-          ) : null}
+          ) : null} */}
         </header>
 
-        <article className="max-w-prose pb-24 px-6">
+        <article className="pb-24">
           <Markdown
             components={{
               a: A,
