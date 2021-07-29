@@ -11,7 +11,8 @@
     "test:ci": "jest --collectCoverage",
     "test:watch": "yarn test --watch",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "postbuild": "next-sitemap"
   },
   "husky": {
     "hooks": {
@@ -39,7 +40,7 @@
     "@testing-library/user-event": "^13.1.9",
     "@types/jest": "^26.0.23",
     "@types/node": "^16.0.0",
-    "@types/react": "^17.0.13",
+    "@types/react": "^17.0.15",
     "@types/react-dom": "^17.0.5",
     "@typescript-eslint/eslint-plugin": "^4.24.0",
     "@typescript-eslint/parser": "^4.24.0",
@@ -55,6 +56,7 @@
     "gray-matter": "^4.0.3",
     "husky": "^7.0.0",
     "jest": "^27.0.6",
+    "next-sitemap": "^1.6.140",
     "postcss": "^8.3.5",
     "prettier": "^2.3.2",
     "pretty-quick": "^3.1.0",
