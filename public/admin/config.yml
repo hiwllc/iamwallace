@@ -21,5 +21,5 @@ collections:
       - label: 'Categoria'
         name: 'category'
         widget: 'select'
-        options: ['React', 'GraphQL']
+        options: ['React', 'GraphQL', 'Game Development']
       - { label: 'Artigo', name: 'body', widget: 'markdown' }
