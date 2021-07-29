@@ -57,5 +57,5 @@ Pra resolver isso: *Preferences > External Tools* marque a opção: `Registry pa
 
 ## Referências
 
-* [Set up VSCode for unity in linux](<* https://medium.com/@sami1592/set-up-visual-studio-code-for-unity-in-linux-69b7f4352e0b>)
+* [Set up VSCode for unity in linux](https://medium.com/@sami1592/set-up-visual-studio-code-for-unity-in-linux-69b7f4352e0b)
 * [How To Make Intellisense Work In VSCode With Unity?](https://www.youtube.com/watch?v=btga03_gGfw&ab_channel=DilmerValecillos)
