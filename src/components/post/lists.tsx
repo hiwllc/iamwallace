@@ -7,10 +7,10 @@ type Props = {
 
 export const List = ({ children, ordered }: Props) => {
   if (ordered) {
-    return <ol className="list-outside">{children}</ol>
+    return <ol className="list-inside">{children}</ol>
   }
 
-  return <ul className="list-outside list-disc">{children}</ul>
+  return <ul className="list-inside list-disc">{children}</ul>
 }
 
 export const Li = ({ children }: Omit<Props, 'ordered'>) => {
