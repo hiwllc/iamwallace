@@ -1,6 +1,7 @@
 ---
 title: Olá, eu sou o Wallace!
-categories: nao-faco-ideia
+categories:
+  - Não faço ideia
 date: 2020-09-28
 description: Oi, eu sou o Wallace, a muito tempo atrás eu costumava escrever
   artigos, eu sempre tive vontade de voltar a escrever, e depois de um tempo
