@@ -8,8 +8,8 @@
     "start": "next start",
     "lint": "eslint src --max-warnings=0",
     "test": "jest --passWithNoTests",
-    "test:ci": "jest --collectCoverage",
-    "test:watch": "yarn test --watch",
+    "test:ci": "jest --passWithNoTests --collectCoverage",
+    "test:watch": "jest --passWithNoTests --watch",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
     "postbuild": "next-sitemap && node ./rss.js"
