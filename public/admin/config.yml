@@ -18,13 +18,15 @@ collections:
       - label: 'Categorias'
         name: 'categories'
         widget: 'select'
-        options:
-          - { label: 'React', value: 'react' }
-          - { label: 'GraphQL', value: 'graphql' }
-          - { label: 'Game Development', value: 'game-development' }
-          - { label: 'Frontend', value: 'frontend' }
-          - { label: 'Backend', value: 'backend' }
-          - { label: 'Não faço ideia', value: 'nao-faco-ideia' }
+        multiple: true
+        options: [
+          'React',
+          'GraphQL',
+          'Game Development',
+          'Frontend',
+          'Backend',
+          'Não faço ideia'
+        ]
       - { label: 'Date', name: 'date', widget: 'datetime' }
       - { label: 'Description', name: 'description', widget: 'string' }
       - { label: 'Cover', name: 'cover', widget: 'image' }
