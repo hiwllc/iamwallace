@@ -4,6 +4,7 @@ date: 2020-10-03
 description: Esse artigo é mais pra me lembrar como fazer essa configuração
 cover: images/unity-vscode-arch.png
 category: Game Development
+categories: game-development
 ---
 [Você pode pular minha introdução e ir direto pra onde eu faço a instalação das coisas.](#arrumando-a-casa)
 
