@@ -27,8 +27,5 @@ collections:
       - { label: 'Data', name: 'date', widget: 'datetime' }
       - { label: 'Descrição', name: 'description', widget: 'string' }
       - { label: 'Capa', name: 'cover', widget: 'image' }
-      - label: 'Categoria'
-        name: 'category'
-        widget: 'select'
-        options: ['React', 'GraphQL', 'Game Development']
+      - { label: 'Categoria', name: 'category', widget: 'relation', collection: 'categories', search_fields: ['label', 'slug'], value_field: 'name'  }
       - { label: 'Artigo', name: 'body', widget: 'markdown' }
