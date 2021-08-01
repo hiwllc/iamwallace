@@ -1,6 +1,6 @@
 {
-  "name": "Next with ChakraUI",
-  "short_name": "Next",
+  "name": "Wallace Oliveira",
+  "short_name": "iamwallace",
   "icons": [
     {
       "src": "/images/icon-192.png",
@@ -14,9 +14,9 @@
       "sizes": "512x512"
     }
   ],
-  "background_color": "#BE9EDF",
-  "description": "Boilerplate with React, NextJS, ChakraUI and TypeScript",
+  "background_color": "#f1f3f8",
+  "description": "Algumas vezes faço uns desenhos e outras vezes escrevo umas coisas aqui, não apenas sobre tecnologia.",
   "display": "fullscreen",
   "start_url": "/",
-  "theme_color": "#BE9EDF"
+  "theme_color": "#f1f3f8"
 }
