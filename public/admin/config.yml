@@ -8,15 +8,6 @@ media_folder: public/images
 public_folder: images
 
 collections:
-  - name: 'categories'
-    label: 'Categorias'
-    folder: 'content/categories'
-    create: true
-    fields:
-      - { label: 'Nome', name: 'name', widget: 'string' }
-      - { label: 'Slug', name: 'slug', widget: 'string' }
-      - { label: 'Cor de fundo', name: 'color', widget: 'string' }
-
   - name: 'posts'
     label: 'Posts'
     folder: 'content/posts'
@@ -24,8 +15,17 @@ collections:
     slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
     fields:
       - { label: 'Titulo', name: 'title', widget: 'string' }
-      - { label: 'Data', name: 'date', widget: 'datetime' }
-      - { label: 'Descrição', name: 'description', widget: 'string' }
-      - { label: 'Capa', name: 'cover', widget: 'image' }
-      - { label: 'Categoria', name: 'category', widget: 'relation', collection: 'categories', search_fields: ['label', 'slug'], value_field: 'name'  }
-      - { label: 'Artigo', name: 'body', widget: 'markdown' }
+      - label: 'Categorias'
+        name: 'categories'
+        widget: 'select'
+        options:
+          - { label: 'React', value: 'react' }
+          - { label: 'GraphQL', value: 'graphql' }
+          - { label: 'Game Development', value: 'game-development' }
+          - { label: 'Frontend', value: 'frontend' }
+          - { label: 'Backend', value: 'backend' }
+          - { label: 'Não faço ideia', value: 'nao-faco-ideia' }
+      - { label: 'Date', name: 'date', widget: 'datetime' }
+      - { label: 'Description', name: 'description', widget: 'string' }
+      - { label: 'Cover', name: 'cover', widget: 'image' }
+      - { label: 'Body', name: 'body', widget: 'markdown' }
