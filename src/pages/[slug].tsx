@@ -1,4 +1,5 @@
 import Markdown from 'react-markdown'
+import slugify from 'slugify'
 import type { Post } from 'api'
 import { allPosts, getPostBySlug } from 'api'
 import { Header } from 'components/header'
@@ -22,13 +23,24 @@ type Props = {
   post: Post
 }
 
-const PostPage = (props: Props) => {
+const COLORS = {
+  'react': '#5089C6',
+  'graphql': '#B97A95',
+  'frontend': '#F6AE99',
+  'backend': '#EEEEEE',
+  'game-development': '#C6B4CE',
+  'nao-faco-ideia': '#F2E1C1',
+}
+
+type COLOR = keyof typeof COLORS
+
+const PostPage = ({ post }: Props) => {
   return (
     <>
       <SEO
-        title={props.post.frontmatter.title}
-        description={props.post.frontmatter.description}
-        image={props.post.frontmatter.cover}
+        title={post.frontmatter.title}
+        description={post.frontmatter.description}
+        image={post.frontmatter.cover}
       />
 
       <Header size={AVATAR_SIZE} />
@@ -36,23 +48,27 @@ const PostPage = (props: Props) => {
       <section className="w-full max-w-2xl px-4 m-auto">
         <header className="w-full py-24 text-center space-y-2 lg:py-60 lg:space-y-4">
           <h2 className="text-4xl text-gray-600 font-black lg:text-6xl">
-            {props.post.frontmatter.title}
+            {post.frontmatter.title}
           </h2>
 
           <small className="text-lg block text-gray-500">
-            {props.post.frontmatter.date}
+            {post.frontmatter.date}
           </small>
 
-          {/* {props.post.frontmatter.category ? (
-            <div>
+          {post.frontmatter.categories.map(category => {
+            const slug = slugify(category, { lower: true }) as COLOR
+
+            return (
               <a
-                href="categoria/graphql"
-                className="bg-pink-400 font-semibold p-2 rounded-md text-xs"
+                key={category}
+                href={`categoria/${slug}`}
+                className="inline-block font-semibold p-2 rounded-md text-xs"
+                style={{ backgroundColor: COLORS[slug] }}
               >
-                {props.post.frontmatter.category}
+                {category}
               </a>
-            </div>
-          ) : null} */}
+            )
+          })}
         </header>
 
         <article className="pb-24">
@@ -69,7 +85,7 @@ const PostPage = (props: Props) => {
               ul: List,
             }}
           >
-            {props.post.content}
+            {post.content}
           </Markdown>
         </article>
       </section>

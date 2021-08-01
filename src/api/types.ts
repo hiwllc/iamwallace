@@ -3,7 +3,7 @@ export type Frontmatter = {
   date: string
   description: string
   cover: string
-  category: string
+  categories: string[]
 }
 
 export type Post = {
