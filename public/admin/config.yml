@@ -8,6 +8,15 @@ media_folder: public/images
 public_folder: images
 
 collections:
+  - name: 'categories'
+    label: 'Categorias'
+    folder: 'content/categories'
+    create: true
+    fields:
+      - { label: 'Nome', name: 'name', widget: 'string' }
+      - { label: 'Slug', name: 'slug', widget: 'string' }
+      - { label: 'Cor de fundo', name: 'color', widget: 'string' }
+
   - name: 'posts'
     label: 'Posts'
     folder: 'content/posts'
