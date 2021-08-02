@@ -1,5 +1,6 @@
 import { AppProps } from 'next/app'
 import Head from 'next/head'
+import { Layout } from 'components/layout'
 import '../styles.css'
 
 function App({ Component, pageProps }: AppProps) {
@@ -17,7 +18,9 @@ function App({ Component, pageProps }: AppProps) {
         />
       </Head>
 
-      <Component {...pageProps} />
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
     </>
   )
 }

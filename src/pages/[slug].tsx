@@ -2,7 +2,6 @@ import Markdown from 'react-markdown'
 import slugify from 'slugify'
 import type { Post } from 'api'
 import { allPosts, getPostBySlug } from 'api'
-import { Header } from 'components/header'
 import {
   Code,
   Paragraph,
@@ -14,10 +13,7 @@ import {
   List,
   Li,
 } from 'components/post'
-import { Footer } from 'components/footer'
 import { SEO } from 'components/seo'
-
-const AVATAR_SIZE = 48
 
 type Props = {
   post: Post
@@ -42,8 +38,6 @@ const PostPage = ({ post }: Props) => {
         description={post.frontmatter.description}
         image={post.frontmatter.cover}
       />
-
-      <Header size={AVATAR_SIZE} />
 
       <section className="w-full max-w-2xl px-4 m-auto">
         <header className="w-full py-24 text-center space-y-2 lg:py-60 lg:space-y-4">
@@ -89,8 +83,6 @@ const PostPage = ({ post }: Props) => {
           </Markdown>
         </article>
       </section>
-
-      <Footer />
     </>
   )
 }
