@@ -11,7 +11,7 @@ export function Posts({ posts }: Props) {
       {posts.map(post => (
         <article className="group" key={post.slug}>
           <h3 className="text-gray-600 text-2xl font-black group-hover:text-pink-400 transition-colors">
-            <Link href={post.slug}>
+            <Link href={`/${post.slug}`}>
               <a>{post.frontmatter.title}</a>
             </Link>
           </h3>

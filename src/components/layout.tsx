@@ -12,7 +12,7 @@ export function Layout({ children }: Props) {
   return (
     <>
       <Header size={AVATAR_SIZE} />
-      {children}
+      <main className="w-full px-4 py-8">{children}</main>
       <Footer />
     </>
   )
