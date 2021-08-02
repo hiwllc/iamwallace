@@ -1,45 +1,42 @@
-import * as fs from 'fs'
-import * as path from 'path'
 import matter from 'gray-matter'
-import type { Post, Fields, Field } from './types'
+import slugify from 'slugify'
+import type { Post, Fields, Field, Category } from './types'
+import { getAllFilenames, getFileContents } from './files'
 
-const POST_DIR = path.join(process.cwd(), 'content/posts')
-
-function getAllFilesName(directory: string = POST_DIR) {
-  return fs.readdirSync(directory)
+function formatDate(date: Date | string) {
+  return new Intl.DateTimeFormat('pt-BR', { dateStyle: 'long' }).format(
+    new Date(date)
+  )
 }
 
-function formatDate(date: Date | string, options?: Intl.DateTimeFormatOptions) {
-  const createdDate = new Date(date)
-  return new Intl.DateTimeFormat('pt-BR', options).format(createdDate)
+function formatCategories(categories: string[]) {
+  return categories.map(category => ({
+    name: category,
+    slug: slugify(category, { lower: true }),
+  }))
 }
 
-type TransformPostData = {
+type MarkdownToPostData = {
   filename: string
   fields?: Fields
-  dateStyle?: Intl.DateTimeFormatOptions['dateStyle']
 }
 
-export function transformPostData({
-  filename,
-  fields = [],
-  dateStyle,
-}: TransformPostData) {
-  const slug = filename.replace(/\.md$/, '')
-  const absolutepath = path.join(POST_DIR, filename)
-  const contents = fs.readFileSync(absolutepath, 'utf-8')
-  const { data, excerpt, content } = matter(contents)
+function markdownPostData({ filename, fields = [] }: MarkdownToPostData) {
+  const slug = filename.slice(11).replace(/\.md$/, '')
+  const fileraw = getFileContents(filename)
+  const { data, excerpt, content } = matter(fileraw)
 
   const frontmatter = {
     ...data,
-    date: formatDate(data.date, { dateStyle }),
+    categories: formatCategories(data.categories),
+    date: formatDate(data.date),
   }
 
   const raw = {
     content,
     excerpt,
     frontmatter,
-    slug: slug.slice(11),
+    slug,
   }
 
   if (fields.length <= 0) {
@@ -53,34 +50,43 @@ export function transformPostData({
   return post
 }
 
-type GetPostByPath = {
-  fields: Fields
-  dateStyle?: Intl.DateTimeFormatOptions['dateStyle']
-}
-
-export function getPostByFilename({ fields, dateStyle }: GetPostByPath) {
-  return (filename: string) =>
-    transformPostData({ filename, fields, dateStyle })
+function getPostByFilename(fields: Fields) {
+  return (filename: string) => markdownPostData({ filename, fields })
 }
 
 export async function allPosts(fields: Fields = ['frontmatter', 'slug']) {
-  const paths = getAllFilesName()
-  const posts = paths
-    .reverse()
-    .map(getPostByFilename({ fields, dateStyle: 'long' }))
-
-  return posts as Post[]
+  return getAllFilenames().reverse().map(getPostByFilename(fields)) as Post[]
 }
 
-export async function getPostBySlug(slug: string) {
-  const paths = getAllFilesName()
+export async function allCategories() {
+  const posts = getAllFilenames().map(
+    getPostByFilename(['frontmatter'])
+  ) as Pick<Post, 'frontmatter'>[]
+
+  const postsCategories = posts.map(post => post.frontmatter.categories)
+
+  return [...new Set(postsCategories)].flat(Infinity) as Category[]
+}
+
+export async function post(slug: string) {
+  const paths = getAllFilenames()
   const filename = paths.find(path => path.includes(slug))
 
   if (!filename) {
     return null
   }
 
-  const post = transformPostData({ filename, dateStyle: 'long' })
+  const post = markdownPostData({ filename })
 
   return post as Post
+}
+
+export async function postsByCategory(category: string) {
+  const results = await allPosts()
+
+  const posts = results.filter(({ frontmatter }) => {
+    return frontmatter.categories.some(({ slug }) => slug === category)
+  })
+
+  return posts
 }

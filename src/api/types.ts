@@ -1,9 +1,14 @@
+export type Category = {
+  name: string
+  slug: string
+}
+
 export type Frontmatter = {
   title: string
   date: string
   description: string
   cover: string
-  categories: string[]
+  categories: Category[]
 }
 
 export type Post = {
