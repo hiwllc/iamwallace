@@ -1,7 +1,6 @@
 import Markdown from 'react-markdown'
-import slugify from 'slugify'
 import type { Post } from 'api'
-import { allPosts, getPostBySlug } from 'api'
+import { allPosts, post } from 'api'
 import {
   Code,
   Paragraph,
@@ -39,7 +38,7 @@ const PostPage = ({ post }: Props) => {
         image={post.frontmatter.cover}
       />
 
-      <section className="w-full max-w-2xl px-4 m-auto">
+      <section className="w-full max-w-2xl m-auto">
         <header className="w-full py-24 text-center space-y-2 lg:py-60 lg:space-y-4">
           <h2 className="text-4xl text-gray-600 font-black lg:text-6xl">
             {post.frontmatter.title}
@@ -49,17 +48,15 @@ const PostPage = ({ post }: Props) => {
             {post.frontmatter.date}
           </small>
 
-          {post.frontmatter.categories.map(category => {
-            const slug = slugify(category, { lower: true }) as COLOR
-
+          {post.frontmatter.categories.map(({ name, slug }) => {
             return (
               <a
-                key={category}
+                key={slug}
                 href={`categoria/${slug}`}
                 className="inline-block font-semibold p-2 rounded-md text-xs"
-                style={{ backgroundColor: COLORS[slug] }}
+                style={{ backgroundColor: COLORS[slug as COLOR] }}
               >
-                {category}
+                {name}
               </a>
             )
           })}
@@ -98,12 +95,12 @@ type Context = {
 export const getStaticProps = async ({ params }: Context) => {
   const { slug } = params
 
-  const post = await getPostBySlug(slug)
+  const result = await post(slug)
 
   return {
     props: {
       post: {
-        ...post,
+        ...result,
         slug,
       },
     },

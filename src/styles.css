@@ -6,3 +6,7 @@
 .sb-main-padded {
   padding: 0 !important;
 }
+
+#__next {
+  @apply flex flex-col min-h-screen;
+}

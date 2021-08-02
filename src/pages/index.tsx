@@ -1,5 +1,4 @@
-import type { Post } from 'api'
-import { allPosts } from 'api'
+import { allPosts, Post } from 'api'
 import { Posts } from 'components/posts'
 
 type Props = {
@@ -7,11 +6,7 @@ type Props = {
 }
 
 const IndexPage = ({ posts }: Props) => {
-  return (
-    <main className="w-full px-4 py-8">
-      <Posts posts={posts} />
-    </main>
-  )
+  return <Posts posts={posts} />
 }
 
 export const getStaticProps = async () => {
