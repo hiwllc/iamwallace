@@ -5,4 +5,3 @@
 
 ## History
 - Adicionar goatcounter ou criar um analitycs.
-- Functions para gerar imagem do post para compartilhar.
