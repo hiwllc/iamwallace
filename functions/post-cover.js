@@ -17,7 +17,7 @@ exports.handler = async (event, context) => {
 
   await page.goto(pageTarget)
 
-  const screenshot = await page.screenshot({ type: 'png' })
+  const screenshot = await page.screenshot()
 
   await browser.close()
 
@@ -29,6 +29,7 @@ exports.handler = async (event, context) => {
     multiValueHeaders: {
       'Cache-Control': ['public', 'immutable', 'no-transform'],
     },
-    body: screenshot,
+    body: screenshot.toString('base64'),
+    isBase64Encoded: true,
   }
 }
