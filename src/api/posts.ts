@@ -1,12 +1,14 @@
 import matter from 'gray-matter'
 import slugify from 'slugify'
+import dayjs from 'dayjs'
+import 'dayjs/locale/pt-br'
 import type { Post, Fields, Field, Category } from './types'
 import { getAllFilenames, getFileContents } from './files'
 
+dayjs.locale('pt-br')
+
 function formatDate(date: Date | string) {
-  return new Intl.DateTimeFormat('pt', { dateStyle: 'long' }).format(
-    new Date(date)
-  )
+  return dayjs(date).format('DD [de] MMMM, YYYY')
 }
 
 function formatCategories(categories: string[]) {

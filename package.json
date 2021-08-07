@@ -22,6 +22,7 @@
   "dependencies": {
     "@netlify/functions": "^0.7.2",
     "chrome-aws-lambda": "^10.1.0",
+    "dayjs": "^1.10.6",
     "next": "^11.0.1",
     "next-pwa": "^5.2.21",
     "prism-react-renderer": "^1.2.1",
