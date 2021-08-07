@@ -4,7 +4,7 @@ categories:
   - Game Development
 date: 2020-10-03
 description: Esse artigo é mais pra me lembrar como fazer essa configuração
-cover: images/unity-vscode-arch.png
+cover: https://iamwallace.dev/.netlify/functions/post-cover?slug=unity-arch-e-vscode
 ---
 [Você pode pular minha introdução e ir direto pra onde eu faço a instalação das coisas.](#arrumando-a-casa)
 
