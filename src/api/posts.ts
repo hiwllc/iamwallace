@@ -4,7 +4,7 @@ import type { Post, Fields, Field, Category } from './types'
 import { getAllFilenames, getFileContents } from './files'
 
 function formatDate(date: Date | string) {
-  return new Intl.DateTimeFormat('pt-BR', { dateStyle: 'long' }).format(
+  return new Intl.DateTimeFormat('pt', { dateStyle: 'long' }).format(
     new Date(date)
   )
 }
