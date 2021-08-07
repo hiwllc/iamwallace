@@ -17,35 +17,33 @@ type COLOR = keyof typeof COLORS
 
 export default function OpenGraphImage({ post }: Props) {
   return (
-    <section className="flex h-screen w-screen bg-gray-100 fixed top-0 left-0 p-6">
-      <article
-        className="p-4 bg-white flex-1 shadow-xl grid place-items-center"
-        style={{ gridTemplateRows: '1fr 70px' }}
-      >
-        <div className="space-y-6 text-center">
-          <h1 className="text-pink-400 text-8xl font-black">
-            {post.frontmatter.title}
-          </h1>
-          <p className="text-xl text-gray-600">{post.frontmatter.date}</p>
+    <section
+      className="h-screen w-screen bg-gray-50 fixed top-0 left-0 grid place-items-center p-6"
+      style={{ gridTemplateRows: '1fr 70px' }}
+    >
+      <article className="space-y-6 text-center">
+        <h1 className="text-pink-400 text-8xl font-black">
+          {post.frontmatter.title}
+        </h1>
+        <p className="text-3xl text-gray-600">{post.frontmatter.date}</p>
 
-          <div className="mt-8 space-x-4">
-            {post.frontmatter.categories.map(({ slug, name }) => (
-              <span
-                key={slug}
-                className="inline-block font-semibold p-2 rounded-md text-sm"
-                style={{ backgroundColor: COLORS[slug as COLOR] }}
-              >
-                {name}
-              </span>
-            ))}
-          </div>
+        <div className="mt-8 space-x-4">
+          {post.frontmatter.categories.map(({ slug, name }) => (
+            <span
+              key={slug}
+              className="inline-block font-semibold p-4 rounded-md text-xl"
+              style={{ backgroundColor: COLORS[slug as COLOR] }}
+            >
+              {name}
+            </span>
+          ))}
         </div>
-
-        <p className="text-xl italic text-gray-500">
-          https://iamwallace.dev/
-          <strong className="text-pink-400">{post.slug}</strong>
-        </p>
       </article>
+
+      <p className="text-2xl italic text-gray-500">
+        https://iamwallace.dev/
+        <strong className="text-pink-400">{post.slug}</strong>
+      </p>
     </section>
   )
 }
