@@ -7,7 +7,7 @@ description: Oi, eu sou o Wallace, a muito tempo atrás eu costumava escrever
   artigos, eu sempre tive vontade de voltar a escrever, e depois de um tempo
   acho que chegou a hora de voltar a compartilhar as coisas que eu costumo fazer
   no dia a dia.
-cover: images/me.jpg
+cover: https://iamwallace.dev/.netlify/functions/post-cover?slug=ola-eu-sou-o-wallace
 ---
 ## Oi, Eu sou o Wallace.
 
