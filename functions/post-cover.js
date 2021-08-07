@@ -15,7 +15,7 @@ exports.handler = async (event, context) => {
   const browser = await chromium.puppeteer.launch({
     executablePath: await chromium.executablePath,
     args: chromium.args,
-    defaultViewport: { height: 795, width: 1024 },
+    defaultViewport: { height: 620, width: 1200 },
     headless: chromium.headless,
   })
 
@@ -36,8 +36,8 @@ exports.handler = async (event, context) => {
         'public',
         'immutable',
         'no-transform',
-        // 's-maxage=31536000',
-        // 'max-age=31536000',
+        's-maxage=31536000',
+        'max-age=31536000',
       ],
     },
     body: screenshot.toString('base64'),
