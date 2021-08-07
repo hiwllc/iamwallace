@@ -19,9 +19,11 @@ exports.handler = async (event, context) => {
     headless: chromium.headless,
   })
 
+  console.log(siteUrl(`og/${slug}`), process.env.NODE_ENV)
+
   const page = await browser.newPage()
-  await page.goto(siteUrl(`/og/${slug}`))
-  const screenshot = await page.screenshot()
+  await page.goto(siteUrl(`og/${slug}`))
+  const screenshot = await page.screenshot({ type: 'png' })
   await browser.close()
 
   return {
