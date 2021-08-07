@@ -8,7 +8,7 @@ type Props = {
 
 export function SEO({ description, title, image }: Props) {
   const siteTitle = 'Wallace Oliveira'
-  const ogImage = `https://iamwallace.dev/${image || 'images/me.jpg'}`
+  const ogImage = image
 
   return (
     <Head>
