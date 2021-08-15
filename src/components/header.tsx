@@ -1,31 +1,16 @@
-import Image from 'next/image'
 import Link from 'next/link'
-import me from '../../public/images/me.jpg'
 
-type Props = {
-  size: number
-}
-
-export function Header({ size }: Props) {
+export function Header() {
   return (
     <header className="px-4 py-6 w-full">
       <div className="h-full w-full max-w-2xl m-auto">
         <Link href="/">
           <a className="flex items-center">
-            <Image
-              width={size}
-              height={size}
-              placeholder="blur"
-              src={me}
-              className="rounded-full"
-              alt="Esse na foto sou eu, Wallace."
-            />
-
-            <div className="px-4">
-              <h2 className="text-gray-600 font-black text-xl">
+            <div className="">
+              <h2 className="text-gray-600 font-black text-xl leading-none">
                 Wallace Oliveira
               </h2>
-              <em className="text-gray-600 text-sm">
+              <em className="text-pink-400 text-sm">
                 Coloco JavaScript em produção
               </em>
             </div>
