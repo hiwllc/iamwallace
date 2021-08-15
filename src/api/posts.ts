@@ -4,6 +4,7 @@ import dayjs from 'dayjs'
 import 'dayjs/locale/pt-br'
 import type { Post, Fields, Field, Category } from './types'
 import { getAllFilenames, getFileContents } from './files'
+import { readTime } from './time'
 
 dayjs.locale('pt-br')
 
@@ -39,6 +40,7 @@ function markdownPostData({ filename, fields = [] }: MarkdownToPostData) {
     excerpt,
     frontmatter,
     slug,
+    readTime: readTime(content),
   }
 
   if (fields.length <= 0) {

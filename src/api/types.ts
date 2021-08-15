@@ -15,6 +15,7 @@ export type Post = {
   content: string
   slug: string
   excerpt: string
+  readTime: number
   frontmatter: Frontmatter
 }
 

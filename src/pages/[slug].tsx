@@ -45,7 +45,7 @@ const PostPage = ({ post }: Props) => {
           </h2>
 
           <small className="text-lg block text-gray-500">
-            {post.frontmatter.date}
+            {post.frontmatter.date} - {post.readTime} min de leitura.
           </small>
 
           {post.frontmatter.categories.map(({ name, slug }) => {
