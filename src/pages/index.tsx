@@ -1,4 +1,4 @@
-import { allPosts, Post } from 'api'
+import { allCategories, allPosts, Post } from 'api'
 import { Posts } from 'components/posts'
 
 type Props = {
@@ -11,6 +11,9 @@ const IndexPage = ({ posts }: Props) => {
 
 export const getStaticProps = async () => {
   const posts = await allPosts()
+  const categories = await allCategories()
+
+  console.log(categories)
 
   return {
     props: { posts },

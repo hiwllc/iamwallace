@@ -18,14 +18,6 @@ module.exports = withPWA({
       use: 'raw-loader',
     })
 
-    // config.module.rules.push({
-    //   test: /\.md$/,
-    //   loader: 'frontmatter-markdown-loader',
-    //   options: {
-    //     mode: ['react-component'],
-    //   },
-    // })
-
     return config
   },
 
