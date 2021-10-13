@@ -1208,10 +1208,10 @@
     exec-sh "^0.3.2"
     minimist "^1.2.0"
 
-"@corex/deepmerge@^2.6.20":
-  version "2.6.20"
-  resolved "https://registry.yarnpkg.com/@corex/deepmerge/-/deepmerge-2.6.20.tgz#a72d1cb5a101fd11160815b96f499a588362ba5b"
-  integrity sha512-oZZxwDtV0bf8VPcSIhZPvdBFUkVIC8zRblUjrrVAsbGRiqUuZJfoXw2M6NDiIXWcUCfOqbkFND6Yf3b9ej9AjA==
+"@corex/deepmerge@^2.6.34":
+  version "2.6.34"
+  resolved "https://registry.yarnpkg.com/@corex/deepmerge/-/deepmerge-2.6.34.tgz#8dd084f2bcc9cf54f6b1210a1aebd25206de2a84"
+  integrity sha512-5l3bQRGOoCJ1nYTxEaOW/MRuwNDq32KYatWO5rwOlOzxY4beVCrxDBaDBX5wpDn0PYm0QAul/vAC9GDHShEbTw==
 
 "@emotion/cache@^10.0.27":
   version "10.0.29"
@@ -9448,12 +9448,12 @@ next-pwa@^5.2.21:
     workbox-webpack-plugin "^6.1.5"
     workbox-window "^6.1.5"
 
-next-sitemap@^1.6.140:
-  version "1.6.140"
-  resolved "https://registry.yarnpkg.com/next-sitemap/-/next-sitemap-1.6.140.tgz#b391633596f4845ec9ceb54a51da8c1f6f97ae43"
-  integrity sha512-VTOQMae/nDLBRGBHnkmGoIsArymlOpJWkZUDvPapktF4QX2U7yvwHIHe7V7amqV2gE2xiDYgd0ayXOBBGuFHog==
+next-sitemap@^1.6.184:
+  version "1.6.184"
+  resolved "https://registry.yarnpkg.com/next-sitemap/-/next-sitemap-1.6.184.tgz#1016735c0dd64f75f8acfb54df276ff5c8078e4e"
+  integrity sha512-72a3juoo3V5PDPiVNJd8DxPRm5E76sT+zWcAjiFIPl7D7kAka8OFp1yEHWXyss5SfjT3WfINeXmletmOX8PEkQ==
   dependencies:
-    "@corex/deepmerge" "^2.6.20"
+    "@corex/deepmerge" "^2.6.34"
     matcher "^4.0.0"
     minimist "^1.2.5"
 
