@@ -20,7 +20,7 @@
     }
   },
   "dependencies": {
-    "@netlify/functions": "^0.7.2",
+    "@netlify/functions": "^0.10.0",
     "chrome-aws-lambda": "^10.1.0",
     "dayjs": "^1.10.6",
     "next": "^11.0.1",
