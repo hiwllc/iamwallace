@@ -1,0 +1,36 @@
+---
+type Props = {
+  title?: string
+}
+
+const { title } = Astro.props
+---
+
+<html lang="pt-BR">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title ? `${title} | Wallace Oliveira` : 'Wallace Oliveira'}</title>
+	</head>
+	<body class="bg-orange-100 min-h-dvh grid grid-rows-[80px_1fr_80px]">
+    <header class="container h-20 flex items-center justify-between gap-4">
+      <h1 class="font-black font-mono">
+        <a href="/">wallace oliveira</a>
+      </h1>
+
+      <nav class="border-2 rounded-lg bg-white border-zinc-700 flex shadow-solig">
+        <!-- <a href="/blog" class="px-4 py-2 inline-flex font-mono font-medium text-sm hover:bg-orange-50 first:rounded-l-lg last:rounded-r-lg">Blog</a> -->
+        <a href="https://github.com/uselessdev" class="px-4 py-2 inline-flex font-mono font-medium text-sm hover:bg-orange-50 first:rounded-l-lg last:rounded-r-lg">Github</a>
+        <a href="https://linkedin.com/in/wallacebatistaoliveira" class="px-4 py-2 inline-flex font-mono font-medium text-sm hover:bg-orange-50 first:rounded-l-lg last:rounded-r-lg">LinkedIn</a>
+      </nav>
+    </header>
+
+    <main>
+      <div class="container min-h-[calc(100dvh-160px)]">
+        <slot />
+      </div>
+    </main>
+	</body>
+</html>
