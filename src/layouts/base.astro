@@ -45,7 +45,7 @@ const data = await result.json() as Data
         <slot />
       </div>
 
-      {data.success ? <WidgetSpotify music={data.music} /> : null}
+      {data.success ? <WidgetSpotify client:only="react" /> : null}
     </main>
 	</body>
 </html>
