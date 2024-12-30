@@ -16,7 +16,7 @@ type Music = {
 
 type Data = { success: false } | { success: true, music: Music }
 
-const result = await fetch(new URL(`/api/spotify`, Astro.url));
+const result = await fetch(new URL("/api/spotify", Astro.url));
 const data = await result.json() as Data
 ---
 
@@ -35,7 +35,7 @@ const data = await result.json() as Data
       </h1>
 
       <nav class="border-2 rounded-lg bg-white border-zinc-700 flex shadow-solig">
-        <a href="https://github.com/uselessdev" class="px-4 py-2 inline-flex font-mono font-medium text-sm hover:bg-orange-50 first:rounded-l-lg last:rounded-r-lg">Github</a>
+        <a href="https://github.com/hiwllc" class="px-4 py-2 inline-flex font-mono font-medium text-sm hover:bg-orange-50 first:rounded-l-lg last:rounded-r-lg">Github</a>
         <a href="https://linkedin.com/in/wallacebatistaoliveira" class="px-4 py-2 inline-flex font-mono font-medium text-sm hover:bg-orange-50 first:rounded-l-lg last:rounded-r-lg">LinkedIn</a>
       </nav>
     </header>

@@ -14,18 +14,25 @@ export function useMusic() {
   const { data, status } = useQuery({
     queryKey: ['FETCH_SPOFITY'],
     queryFn: async () => {
-      const result = await fetch(new URL(`/api/spotify`, import.meta.env.DEV ? `http://localhost:4321/` : `https://iamwallace.dev/`))
+      const result = await fetch(
+							new URL(
+								"/api/spotify",
+								import.meta.env.DEV
+									? "http://localhost:4321/"
+									: "https://iamwallace.dev/",
+							),
+						);
 
       if (!result.ok) {
         console.log(result.status)
-        throw new Error(`Failed to fetch`)
+        throw new Error("Failed to fetch");
       }
 
       const data = await result.json() as Data
 
       if (!data.success) {
         console.log(result.status)
-        throw new Error(`Failed to fetch`)
+        throw new Error("Failed to fetch");
       }
 
       return data.music
